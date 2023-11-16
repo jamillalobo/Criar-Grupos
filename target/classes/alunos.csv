@@ -1,3 +1,3 @@
 id, nome, idade, expprofissional, genero, primeiraGraduacao, perfil
-1, Julia, 21, true, feminino, true, artesao
-2, Murilo, 40, true, masculino, false, ativista
+1,Julia,21,12,feminino,true,artesao
+2,Murilo,40,6,masculino,false,ativista

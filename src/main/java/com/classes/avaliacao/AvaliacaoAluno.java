@@ -1,25 +1,23 @@
 package com.classes.avaliacao;
 
+import com.classes.alunos.Aluno;
 public class AvaliacaoAluno implements Avaliacao {
-  int idade;
-  int expprofissional;
   int nota_idade;
   int nota_expprofissional;
-  boolean primeiragraduacao;
   int nota_primeiragraducao;
-  String perfil;
   int nota_perfil;
   int score;
   int codscore;
   int codigo;
+  Aluno alunos;
 
   @Override
   public void avaliarIdade() {
-    if (idade < 20) {
+    if (alunos.getIdade() < 20) {
             nota_idade = 10;
-        } else if (idade >= 20 && idade <= 25) {
+        } else if (alunos.getIdade() >= 20 && alunos.getIdade() <= 25) {
           nota_idade = 100;
-        } else if (idade > 25 && idade <= 30) {
+        } else if (alunos.getIdade() > 25 && alunos.getIdade() <= 30) {
           nota_idade = 200;        } 
         else {
           nota_idade = 300; 
@@ -28,11 +26,11 @@ public class AvaliacaoAluno implements Avaliacao {
 
   @Override
   public void avaliarExperienciaProfissional() {
-    if (expprofissional < 12) {
+    if (alunos.isExpprofissional() < 12) {
       nota_expprofissional = 10;
-        } else if (expprofissional >= 12 && expprofissional <= 36) {
+        } else if (alunos.isExpprofissional() >= 12 && alunos.isExpprofissional() <= 36) {
           nota_expprofissional = 100;
-        } else if (expprofissional > 36 && expprofissional <= 120) {
+        } else if (alunos.isExpprofissional() > 36 && alunos.isExpprofissional() <= 120) {
           nota_expprofissional = 200;        } 
         else {
           nota_expprofissional = 300;	
@@ -41,7 +39,7 @@ public class AvaliacaoAluno implements Avaliacao {
 
   @Override
   public void avaliarPrimeiraGraduacao() {
-    if (primeiragraduacao == true) {
+    if (alunos.isPrimeiraGraduacao() == true) {
       nota_primeiragraducao = 10;
     }
         else {
@@ -51,11 +49,11 @@ public class AvaliacaoAluno implements Avaliacao {
 
   @Override
   public void avaliarPerfil() {
-    if (perfil.equals("NF")) {
+    if (alunos.getPerfil().equals("NF")) {
             nota_perfil = 1;
-        } else if (perfil.equals("NT")) {
+        } else if (alunos.getPerfil().equals("NT")) {
           nota_perfil = 2;
-        } else if (perfil.equals("SJ")) {
+        } else if (alunos.getPerfil().equals("SJ")) {
           nota_perfil = 3;        } 
         else {
           nota_perfil = 4; 
@@ -84,7 +82,28 @@ public class AvaliacaoAluno implements Avaliacao {
     codigo = codscore + nota_perfil;
 
   }
+
+  public AvaliacaoAluno(Aluno alunos) {
+    this.alunos = alunos;
+  }
+
+  public void avaliar() {
+    avaliarIdade();
+    avaliarExperienciaProfissional();
+    avaliarPrimeiraGraduacao();
+    avaliarPerfil();
+    avaliarScore();
+    codigoEstudante();
+    System.out.println("Avaliação do aluno: " + alunos.getNome());
+    System.out.println("Nota idade: " + nota_idade);
+    System.out.println("Nota experiência profissional: " + nota_expprofissional);
+    System.out.println("Nota primeira graduacao: " + nota_primeiragraducao);
+    System.out.println("Nota perfil: " + nota_perfil);
+    System.out.println("Score: " + score);
+    System.out.println("Código do estudante: " + codigo);
+  }
 }
+
 
 interface Avaliacao {
   void avaliarIdade();
