@@ -5,9 +5,9 @@ public class Aluno {
     private String id;
     private String nome;
     private int idade;
-    private int genero;
-    private String expprofissional;
-    private String primeiraGraduacao;
+    private String genero;
+    private int expprofissional;
+    private boolean primeiraGraduacao;
     private String perfil;
 
     // get e set alunos
@@ -35,27 +35,27 @@ public class Aluno {
         this.idade = idade;
     }
 
-    public int getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(int genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public String isExpprofissional() {
+    public int isExpprofissional() {
         return expprofissional;
     }
 
-    public void setExpprofissional(String expprofissional) {
+    public void setExpprofissional(int expprofissional) {
         this.expprofissional = expprofissional;
     }
 
-    public String isPrimeiraGraduacao() {
+    public boolean isPrimeiraGraduacao() {
         return primeiraGraduacao;
     }
 
-    public void setPrimeiraGraduacao(String primeiraGraduacao) {
+    public void setPrimeiraGraduacao(boolean primeiraGraduacao) {
         this.primeiraGraduacao = primeiraGraduacao;
     }
 
@@ -68,7 +68,7 @@ public class Aluno {
     }
 
     // construtor aluno
-    public Aluno(String id, String nome, int idade, int genero, String expprofissional, String primeiraGraduacao, String perfil) {
+    public Aluno(String id, String nome, int idade, int expprofissional, String genero, boolean primeiraGraduacao, String perfil) {
         this.id = id;  
         this.nome = nome;
         this.idade = idade;
