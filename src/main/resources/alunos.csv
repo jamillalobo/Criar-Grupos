@@ -13,3 +13,4 @@ id, nome, idade, expprofissional, genero, primeiraGraduacao, perfil
 12,Pedro,32,6,masculino,false,ativista
 13,Luiz,55,12,masculino,true,artesao
 14,Marcela,19,6,feminino,false,ativista
+15,Ana,20,12,feminino,true,artesao

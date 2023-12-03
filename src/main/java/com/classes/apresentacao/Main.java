@@ -9,8 +9,6 @@ import java.io.File;
 
 public class Main {
     private List<Aluno> alunos;
-    private List<AvaliacaoAluno> alunosComPonto;
-
 
     public static void main(String[] args) throws Exception {
         LeituraPlanilha reader = new LeituraPlanilha();
