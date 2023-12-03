@@ -1,4 +1,4 @@
-package com.classes.alunos;
+package com.classes.dados;
 
 public class Aluno {
     // atributos aluno

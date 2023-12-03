@@ -1,9 +1,9 @@
-package com.classes;
+package com.classes.apresentacao;
 import java.util.List;
 
-import com.classes.alunos.Aluno;
-import com.classes.alunos.RegistroAluno;
-import com.classes.avaliacao.AvaliacaoAluno;
+import com.classes.dados.Aluno;
+import com.classes.negocio.AvaliacaoAluno;
+import com.classes.negocio.RegistroAluno;
 
 import java.io.File;
 

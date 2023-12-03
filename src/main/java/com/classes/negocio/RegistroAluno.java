@@ -1,10 +1,11 @@
-package com.classes.alunos;
+package com.classes.negocio;
 
 import java.io.File;
 import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.classes.dados.Aluno;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;

@@ -1,4 +1,4 @@
-package com.classes.grupos;
+package com.classes.negocio;
 
 import java.util.ArrayList;
 import java.util.Collections;

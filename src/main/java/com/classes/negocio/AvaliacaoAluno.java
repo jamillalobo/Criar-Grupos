@@ -1,8 +1,11 @@
-package com.classes.avaliacao;
+package com.classes.negocio;
 
 import java.util.List;
 
-import com.classes.alunos.Aluno;
+
+import com.classes.dados.Aluno;
+import com.classes.dados.Avaliacao;
+
 public class AvaliacaoAluno implements Avaliacao {
   int nota_idade;
   int nota_expprofissional;
@@ -113,11 +116,3 @@ public class AvaliacaoAluno implements Avaliacao {
 }
 
 
-interface Avaliacao {
-  void avaliarIdade();
-  void avaliarExperienciaProfissional();
-  void avaliarPrimeiraGraduacao();
-  void avaliarPerfil();
-  void avaliarScore();
-  void codigoEstudante();
-}
