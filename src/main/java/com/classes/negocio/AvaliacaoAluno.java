@@ -44,13 +44,12 @@ public class AvaliacaoAluno implements Avaliacao {
 
   @Override
   public void avaliarPrimeiraGraduacao() {
-    if (alunos.isPrimeiraGraduacao() == true) {
+    if (alunos.getPrimeiraGraduacao().equals("true")) {
       nota_primeiragraducao = 10;
+    } else {
+      nota_primeiragraducao = 100;		
     }
-        else {
-          nota_primeiragraducao = 100;		
   }
-    }
 
   @Override
   public void avaliarPerfil() {
@@ -59,8 +58,8 @@ public class AvaliacaoAluno implements Avaliacao {
         } else if (alunos.getPerfil().equals("NT")) {
           nota_perfil = 2;
         } else if (alunos.getPerfil().equals("SJ")) {
-          nota_perfil = 3;        } 
-        else {
+          nota_perfil = 3;        
+        } else {
           nota_perfil = 4; 
         }
   }		

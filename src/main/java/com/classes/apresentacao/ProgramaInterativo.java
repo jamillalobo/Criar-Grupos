@@ -3,6 +3,7 @@ package com.classes.apresentacao;
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 
 import com.classes.dados.Aluno;
 import com.classes.dados.Grupo;
@@ -44,16 +45,20 @@ public class ProgramaInterativo {
                         System.err.println("Erro ao ler o arquivo CSV: " + e.getMessage());
                     }
 
-                    List<Aluno> listaDeAlunos = leituraPlanilha.getAlunos();
+                    List<Aluno> listaDeAlunos = leituraPlanilha.getAlunos(); // Obter a lista de alunos
 
+                    Collections.shuffle(listaDeAlunos); // Embaralhar a lista de alunos
+
+                    // Criar grupos e adicionar o grupo na lista de grupos
                     for (int i = 1; i <= quantidadeGrupos; i++) {
                         Grupo novoGrupo = new Grupo(i, quantidadeGrupos, quantidadeAlunosPorGrupo);
-                        grupo.adicionarGrupo(novoGrupo);
+                        grupo.adicionarGrupo(novoGrupo); 
 
+                    // Adicionar os alunos ao grupo
                     for (int j = 0; j < quantidadeAlunosPorGrupo && j < listaDeAlunos.size(); j++) {
                         Aluno aluno = listaDeAlunos.get(indiceAluno);
-                        GrupoRepositorio.adicionarAlunoAoGrupo(i, aluno);
-                        indiceAluno++;
+                        GrupoRepositorio.adicionarAlunoAoGrupo(i, aluno); 
+                        indiceAluno++; 
                     }
 
                         System.out.println("Grupo criado: " + novoGrupo);

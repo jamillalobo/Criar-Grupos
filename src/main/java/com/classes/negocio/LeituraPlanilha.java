@@ -56,7 +56,7 @@ public class LeituraPlanilha {
                     Integer.parseInt(record[2]),  // Assuming record[2] is the value for idade
                     Integer.parseInt(record[3]),  // Assuming record[3] is the value for expprofissional
                     record[4],  // Assuming record[4] is the value for genero
-                    Boolean.parseBoolean(record[5]),  // Assuming record[5] is the value for primeiraGraduacao
+                    record[5],  // Assuming record[5] is the value for primeiraGraduacao
                     record[6]   // Assuming record[6] is the value for perfil
                 ));
             }
