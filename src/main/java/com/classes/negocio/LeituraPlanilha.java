@@ -10,7 +10,7 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-public class RegistroAluno {
+public class LeituraPlanilha {
     private List<Aluno> alunos = new ArrayList<Aluno>();
 
     public List<Aluno> getAlunos() {

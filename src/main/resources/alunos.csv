@@ -1,3 +1,15 @@
 id, nome, idade, expprofissional, genero, primeiraGraduacao, perfil
 1,Julia,21,12,feminino,true,artesao
 2,Murilo,40,6,masculino,false,ativista
+3,Rafaela,45,12,feminino,true,artesao
+4,Joao,18,6,masculino,false,ativista
+5,Tulio,25,12,masculino,true,artesao
+6,Victor,18,6,masculino,false,ativista
+7,Jamilla,22,12,feminino,true,artesao
+8,Ricardo,28,6,masculino,false,ativista
+9,Erica,24,12,feminino,true,artesao
+10,Emilia,28,6,feminino,false,ativista
+11,Dandara,50,12,feminino,true,artesao
+12,Pedro,32,6,masculino,false,ativista
+13,Luiz,55,12,masculino,true,artesao
+14,Marcela,19,6,feminino,false,ativista

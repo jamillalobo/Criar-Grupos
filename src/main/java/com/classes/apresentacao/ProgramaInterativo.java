@@ -4,68 +4,74 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.classes.dados.Aluno;
-import com.classes.repositorio.AlunoRepositorio;
+import com.classes.dados.Grupo;
+import com.classes.repositorio.GrupoRepositorio;
+
 
 public class ProgramaInterativo {
+
     public static void main(String[] args) {
-        AlunoRepositorio AlunoRepositorio = new AlunoRepositorio();
         Scanner scanner = new Scanner(System.in);
+        GrupoRepositorio grupo = new GrupoRepositorio();
 
         while (true) {
             System.out.println("\nEscolha uma opção:");
-            System.out.println("1 - Adicionar aluno");
-            System.out.println("2 - Listar alunos");
-            System.out.println("3 - Atualizar aluno");
-            System.out.println("4 - Excluir aluno");
-            System.out.println("5 - Sair");
+            System.out.println("1 - Criar Grupos");
+            System.out.println("2 - Listar Todos os Grupos");
+            System.out.println("3 - Sair");
 
-            int choice = scanner.nextInt();
+            int escolha = scanner.nextInt();
             scanner.nextLine(); // Consumir a quebra de linha
 
-            switch (choice) {
+            switch (escolha) {
                 case 1:
-                    System.out.println("Digite o nome do aluno:");
-                    String name = scanner.nextLine();
-                    System.out.println("Digite a idade do aluno:");
-                    int age = scanner.nextInt();
-                    AlunoRepositorio.adicionarAluno(new Aluno());
-                    System.out.println("Aluno adicionado com sucesso!");
+                    System.out.println("\nQuantos grupos deseja criar?");
+                    int quantidadeGrupos = scanner.nextInt();
+                    scanner.nextLine(); // Consumir a quebra de linha
+
+                    System.out.println("Quantos alunos deseja em cada grupo?");
+                    int quantidadeAlunosPorGrupo = scanner.nextInt();
+                    scanner.nextLine(); // Consumir a quebra de linha
+
+                    for (int i = 1; i <= quantidadeGrupos; i++) {
+                        Grupo novoGrupo = new Grupo(i, quantidadeGrupos, quantidadeAlunosPorGrupo);
+                        grupo.adicionarGrupo(novoGrupo);
+
+                        for (int j = 1; j <= quantidadeAlunosPorGrupo; j++) {
+                            // Aqui você pode adicionar lógica para adicionar alunos ao grupo
+                            // (pode ser feito interativamente ou usando uma lista de alunos existentes)
+                            // Exemplo: novoGrupo.adicionarAluno(new Aluno("Nome do Aluno"));
+                            System.out.print("Nome do Aluno " + j + ": ");
+                            String nomeAluno = scanner.nextLine();
+
+                            // Aqui você pode criar um aluno com o nome informado
+                            Aluno aluno = new Aluno(nomeAluno);
+
+                            // Adicionar o aluno ao grupo
+                            novoGrupo.adicionarAluno(aluno);
+                        }
+
+                        System.out.println("Grupo criado: " + novoGrupo);
+                    }
                     break;
 
                 case 2:
-                    List<Aluno> alunos = AlunoRepositorio.obterTodosAlunos();
-                    alunos.forEach(System.out::println);
+                    System.out.println("\nLista de Todos os Grupos:");
+                    for (Grupo grupoItem : grupo.obterTodosGrupos()) {
+                        System.out.println(grupoItem);
+                    }
                     break;
 
-                case 3:
-                    System.out.println("Digite o ID do aluno a ser atualizado:");
-                    int studentId = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a quebra de linha
-                    System.out.println("Digite o novo nome do aluno:");
-                    String newName = scanner.nextLine();
-                    AlunoRepositorio.atualizarAluno(null);
-                    System.out.println("Aluno atualizado com sucesso!");
-                    break;
-
-                case 4:
-                    System.out.println("Digite o ID do aluno a ser excluído:");
-                    int studentToDelete = scanner.nextInt();
-                    AlunoRepositorio.removerAluno(id);
-                    System.out.println("Aluno excluído com sucesso!");
-                    break;
-
-                case 5:
-                    System.out.println("Saindo do programa...");
+                    case 3:
+                    System.out.println("Saindo do programa.");
                     scanner.close();
                     System.exit(0);
+                    break;
 
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
         }
     }
-
-    private static String getId() {
-        return null;
-    }
 }
+
