@@ -159,7 +159,7 @@ public class ProgramaInterativo {
 
                 case 3:
                     // Lógica para atualizar um aluno existente
-                    // AlunoRepositorio.atualizarAluno(aluno);
+                    AlunoRepositorio.atualizarAluno(scanner);
                     break;
 
                 case 4:

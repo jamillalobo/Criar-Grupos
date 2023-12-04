@@ -5,11 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.classes.dados.Aluno;
-import com.classes.repositorio.InterfaceAluno;
 import com.classes.negocio.LeituraPlanilha;
 
-public class AlunoRepositorio implements InterfaceAluno {
-    // private static Map<String, String> alunos;
+public class AlunoRepositorio {
     private static List<Aluno> alunos;
 
     public AlunoRepositorio() {
@@ -79,17 +77,33 @@ public class AlunoRepositorio implements InterfaceAluno {
     }
 
     // UPDATE
-    public static void atualizarAluno(Aluno alunoAtualizado) {
+    public static Aluno atualizarAluno(Scanner scanner) {
         System.out.print("ID do aluno: ");
         String id = scanner.nextLine();
-        scanner.nextLine(); // Consumir a quebra de linha
         
-        for (int i = 0; i < alunos.size(); i++) {
-            if (alunos.get(i).getId().equals(String.valueOf(alunoAtualizado.getId()))) {
-                alunos.set(i, alunoAtualizado);
-                return;
-            }
-        }
+        System.out.print("Nome do aluno: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Idade do aluno: ");
+        int idade = scanner.nextInt();
+
+        System.out.print("Experiência profissional do aluno: ");
+        int expprofissional = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha
+
+        System.out.print("Gênero do aluno: ");
+        String genero = scanner.nextLine();
+
+        System.out.print("Primeira graduação do aluno (responder com true ou false): ");
+        String primeiraGraduacao = scanner.nextLine();
+
+        System.out.print("Perfil do aluno: ");
+        String perfil = scanner.nextLine();
+
+        Aluno alunoAtualizado = new Aluno(id, nome, idade, expprofissional, genero, primeiraGraduacao, perfil);
+        
+        return alunoAtualizado;
+        
     }
 
     // DELETE

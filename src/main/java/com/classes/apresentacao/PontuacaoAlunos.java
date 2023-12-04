@@ -7,7 +7,7 @@ import com.classes.negocio.LeituraPlanilha;
 
 import java.io.File;
 
-public class Main {
+public class PontuacaoAlunos {
     private List<Aluno> alunos;
 
     public static void main(String[] args) throws Exception {
@@ -19,7 +19,5 @@ public class Main {
             AvaliacaoAluno avaliacao = new AvaliacaoAluno(aluno);
             avaliacao.avaliar();
         }
-
-        // List<AvaliacaoAluno> alunosComPonto = new AvaliacaoAluno().getAlunosComPonto();
     }
 }
