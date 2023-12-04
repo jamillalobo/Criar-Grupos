@@ -1,15 +1,17 @@
-package com.classes.alunos;
+package com.classes.negocio;
 
 import java.io.File;
 import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
+import com.classes.dados.Aluno;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-public class RegistroAluno {
+public class LeituraPlanilha {
     private List<Aluno> alunos = new ArrayList<Aluno>();
 
     public List<Aluno> getAlunos() {
@@ -55,7 +57,7 @@ public class RegistroAluno {
                     Integer.parseInt(record[2]),  // Assuming record[2] is the value for idade
                     Integer.parseInt(record[3]),  // Assuming record[3] is the value for expprofissional
                     record[4],  // Assuming record[4] is the value for genero
-                    Boolean.parseBoolean(record[5]),  // Assuming record[5] is the value for primeiraGraduacao
+                    record[5],  // Assuming record[5] is the value for primeiraGraduacao
                     record[6]   // Assuming record[6] is the value for perfil
                 ));
             }

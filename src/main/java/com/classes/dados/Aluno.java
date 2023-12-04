@@ -1,4 +1,4 @@
-package com.classes.alunos;
+package com.classes.dados;
 
 public class Aluno {
     // atributos aluno
@@ -7,8 +7,19 @@ public class Aluno {
     private int idade;
     private String genero;
     private int expprofissional;
-    private boolean primeiraGraduacao;
+    private String primeiraGraduacao;
     private String perfil;
+    
+    // construtor aluno
+    public Aluno(String id, String nome, int idade, int expprofissional, String genero, String primeiraGraduacao, String perfil) {
+        this.id = id;  
+        this.nome = nome;
+        this.idade = idade;
+        this.expprofissional = expprofissional;
+        this.genero = genero;
+        this.primeiraGraduacao = primeiraGraduacao;
+        this.perfil = perfil;
+    }
 
     // get e set alunos
     public String getId() {
@@ -51,11 +62,11 @@ public class Aluno {
         this.expprofissional = expprofissional;
     }
 
-    public boolean isPrimeiraGraduacao() {
+    public String getPrimeiraGraduacao() {
         return primeiraGraduacao;
     }
 
-    public void setPrimeiraGraduacao(boolean primeiraGraduacao) {
+    public void setPrimeiraGraduacao(String primeiraGraduacao) {
         this.primeiraGraduacao = primeiraGraduacao;
     }
 
@@ -67,16 +78,16 @@ public class Aluno {
         this.perfil = perfil;
     }
 
-    // construtor aluno
-    public Aluno(String id, String nome, int idade, int expprofissional, String genero, boolean primeiraGraduacao, String perfil) {
-        this.id = id;  
-        this.nome = nome;
-        this.idade = idade;
-        this.expprofissional = expprofissional;
-        this.genero = genero;
-        this.primeiraGraduacao = primeiraGraduacao;
-        this.perfil = perfil;
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", experienciaProfissional=" + expprofissional +
+                ", genero=" + genero +
+                ", primeiraGraducao=" + primeiraGraduacao +
+                ", perfil=" + perfil +
+                '}';
     }
-
-
 }

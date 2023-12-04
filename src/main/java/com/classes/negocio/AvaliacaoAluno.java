@@ -1,6 +1,11 @@
-package com.classes.avaliacao;
+package com.classes.negocio;
 
-import com.classes.alunos.Aluno;
+import java.util.List;
+
+
+import com.classes.dados.Aluno;
+import com.classes.dados.Avaliacao;
+
 public class AvaliacaoAluno implements Avaliacao {
   int nota_idade;
   int nota_expprofissional;
@@ -39,13 +44,12 @@ public class AvaliacaoAluno implements Avaliacao {
 
   @Override
   public void avaliarPrimeiraGraduacao() {
-    if (alunos.isPrimeiraGraduacao() == true) {
+    if (alunos.getPrimeiraGraduacao().equals("true")) {
       nota_primeiragraducao = 10;
+    } else {
+      nota_primeiragraducao = 100;		
     }
-        else {
-          nota_primeiragraducao = 100;		
   }
-    }
 
   @Override
   public void avaliarPerfil() {
@@ -54,8 +58,8 @@ public class AvaliacaoAluno implements Avaliacao {
         } else if (alunos.getPerfil().equals("NT")) {
           nota_perfil = 2;
         } else if (alunos.getPerfil().equals("SJ")) {
-          nota_perfil = 3;        } 
-        else {
+          nota_perfil = 3;        
+        } else {
           nota_perfil = 4; 
         }
   }		
@@ -95,21 +99,19 @@ public class AvaliacaoAluno implements Avaliacao {
     avaliarScore();
     codigoEstudante();
     System.out.println("Avaliação do aluno: " + alunos.getNome());
-    System.out.println("Nota idade: " + nota_idade);
-    System.out.println("Nota experiência profissional: " + nota_expprofissional);
-    System.out.println("Nota primeira graduacao: " + nota_primeiragraducao);
-    System.out.println("Nota perfil: " + nota_perfil);
-    System.out.println("Score: " + score);
+    // System.out.println("Nota idade: " + nota_idade);
+    // System.out.println("Nota experiência profissional: " + nota_expprofissional);
+    // System.out.println("Nota primeira graduacao: " + nota_primeiragraducao);
+    // System.out.println("Nota perfil: " + nota_perfil);
+    // System.out.println("Score: " + score);
     System.out.println("Código do estudante: " + codigo);
+  }
+
+  // criar metodo para retornar todos os codigos de estudantes
+  public List<AvaliacaoAluno> getAlunosComPonto() {
+    avaliar();
+    return null;
   }
 }
 
 
-interface Avaliacao {
-  void avaliarIdade();
-  void avaliarExperienciaProfissional();
-  void avaliarPrimeiraGraduacao();
-  void avaliarPerfil();
-  void avaliarScore();
-  void codigoEstudante();
-}
