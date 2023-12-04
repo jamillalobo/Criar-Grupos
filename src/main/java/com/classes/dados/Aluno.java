@@ -9,6 +9,17 @@ public class Aluno {
     private int expprofissional;
     private String primeiraGraduacao;
     private String perfil;
+    
+    // construtor aluno
+    public Aluno(String id, String nome, int idade, int expprofissional, String genero, String primeiraGraduacao, String perfil) {
+        this.id = id;  
+        this.nome = nome;
+        this.idade = idade;
+        this.expprofissional = expprofissional;
+        this.genero = genero;
+        this.primeiraGraduacao = primeiraGraduacao;
+        this.perfil = perfil;
+    }
 
     // get e set alunos
     public String getId() {
@@ -67,16 +78,16 @@ public class Aluno {
         this.perfil = perfil;
     }
 
-    // construtor aluno
-    public Aluno(String id, String nome, int idade, int expprofissional, String genero, String primeiraGraduacao, String perfil) {
-        this.id = id;  
-        this.nome = nome;
-        this.idade = idade;
-        this.expprofissional = expprofissional;
-        this.genero = genero;
-        this.primeiraGraduacao = primeiraGraduacao;
-        this.perfil = perfil;
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", experienciaProfissional=" + expprofissional +
+                ", genero=" + genero +
+                ", primeiraGraducao=" + primeiraGraduacao +
+                ", perfil=" + perfil +
+                '}';
     }
-
-
 }

@@ -49,7 +49,7 @@ public class GrupoRepositorio {
     }
 
     // ADICIONAR ALUNO
-    public static void adicionarAlunoAoGrupo(int grupoId, Aluno aluno) {
+    public void adicionarAlunoAoGrupo(int grupoId, Aluno aluno) {
         for (Grupo grupo : grupos) {
             if (grupo.getId() == grupoId) {
                 grupo.adicionarAluno(aluno);
